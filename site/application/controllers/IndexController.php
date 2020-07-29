@@ -51,7 +51,7 @@ class IndexController extends FP_Controller_CommonController
         public function demandesfaAction() {}
 	public function chargeAction() {}
 	public function donAction() {}
-	
+	public function legalAction() {}
         
         public function unsubscribeAction() {
             $request = $this->getRequest();
