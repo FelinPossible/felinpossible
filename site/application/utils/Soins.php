@@ -184,7 +184,7 @@ function print_pdf(FP_Form_chat_FicheSoinsForm $ficheSoinForm)
     $pdf->SetTextColor(255,0,0);
     $pdf->SetFont('Arial','BI',12);
     $pdf->setXY(20,$pos_fin+25);
-    $pdf->MultiCell(180,5,utf8_decode("- Merci de nous contacter au 06 28 19 73 84 pour tout acte à réaliser, non-indiqué sur cette fiche, ou toute question concernant le chat, le tarif ou l'association."));
+    $pdf->MultiCell(180,5,utf8_decode("- Merci de nous contacter au 06 50 09 88 48 pour tout acte à réaliser, non-indiqué sur cette fiche, ou toute question concernant le chat, le tarif ou l'association."));
     
     //Pied de page
     $pdf->SetTextColor(0,0,0);
@@ -202,7 +202,7 @@ function print_pdf(FP_Form_chat_FicheSoinsForm $ficheSoinForm)
     $pdf->setXY(20,285);
     $pdf->SetFont('Arial','B',8);
     $pdf->SetTextColor(100,100,100);
-    $pdf->MultiCell(180,3, utf8_decode("Association FELIN POSSIBLE - Chez Mme Véronique CHANU - 5 allée Roger Le Poullenec - 35000 RENNES - 06.28.19.73.84 - asso@felinpossible.fr - www.felinpossible.fr"));
+    $pdf->MultiCell(180,3, utf8_decode("Association FELIN POSSIBLE - 4 Rue des Forgerons - 35310 CHAVAGNE - 06.50.09.88.48 - asso@felinpossible.fr - www.felinpossible.fr"));
     
 	//Impression du pdf
     $pdf->Output('Soins_'.$ficheSoinForm->nomChat->getValue().'_'.date('dmY', time()).'.pdf','D');
