@@ -50,14 +50,14 @@ class FP_Model_Mapper_FaMapper extends FP_Model_Mapper_CommonMapper {
 		'isoler' => 'isolerChat',
 		'idStatut' => 'statutId',
 		'notes' => 'notes',
-		'login' => 'login',
+		'Login' => 'login',
 		'dateSubmit' => 'dateSubmit',
 		'superficie' => 'superficie',
 		'dateContratFa' => 'dateContratFa'
 		);
 
 protected $filterKeyToDbKey = array('nom' => 'fa.nom',
-	'login' => 'fa.login',
+	'login' => 'fa.Login COLLATE utf8_general_ci',
 	'prenom' => 'fa.prenom',
 	'statut' => 'fa.idStatut',
 	'dateContratFa' => 'fa.dateContratFa');
@@ -175,9 +175,9 @@ protected $filterKeyToDbKey = array('nom' => 'fa.nom',
 	public function getFAValideeFromLogin($login) {
 		$select = $this->getDbTable()->getAdapter()->select()
 		->from(array('fa' => 'fp_fa_fiche'))
-		->join(array('phpbb_users' => 'phpbb_users'), "upper(fa.login) = upper(phpbb_users.username)")
+		->join(array('phpbb_users' => 'phpbb_users'), "upper(fa.Login) = upper(phpbb_users.username)")
 		->joinLeft(array('phpbb_user_group' => 'phpbb_user_group'), 'phpbb_users.user_id = phpbb_user_group.user_id AND phpbb_user_group.group_id = 9')
-		->where('upper(fa.login)=upper("'.addslashes($login).'") COLLATE utf8_general_ci')
+		->where('upper(fa.Login)=upper("'.addslashes($login).'") COLLATE utf8_general_ci')
 		->order('dateSubmit desc');
 
 		$stmt = $select->query();
