@@ -116,7 +116,7 @@ class FP_Service_DemandeFicheSoinsServices extends FP_Service_CommonServices {
             if ($demande->getNomChat())
             {
                 $cs = FP_Service_ChatServices::getInstance();
-                $infosChat = $cs->getMapper()->select(null,'replace(upper(nom),"\"","")=upper("'.str_replace('"','',$demande->getNomChat()).'"  COLLATE utf8_general_ci)',null);
+                $infosChat = $cs->getMapper()->select(null,'replace(upper(nom),"\"","")=upper("'.str_replace('"','',$demande->getNomChat()).'"  COLLATE utf8_general_ci)  AND adopte = 0 AND disparu = 0 ',null);
                 
                 if ($infosChat){//Si on a un nom de chat précis (et pas "les 3 chatons noirs"), on récupère les infos
                     $coulMapper = FP_Model_Mapper_MapperFactory::getInstance()->couleurMapper;
