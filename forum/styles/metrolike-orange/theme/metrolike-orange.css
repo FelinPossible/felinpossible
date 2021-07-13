@@ -25,7 +25,7 @@ a, .forumbg .header a:hover, .forabg .header a:hover, th a:hover, .postlink, .po
 
 #headleft {width:25.5%;max-height:130px;background-image: url("./images/ban00.jpg");}
 #headright {width:48%;max-width:423px;max-height:130px;background-image: url("./images/ban00.jpg");}
-.imgpub {max-height:90px;background-color:#FFFFFF;max-width:100%;}
+.imgpub {max-height:90px;background-color:#FFFFFF;max-width:95%;}
 .tablepub{overflow-x: hidden;max-width:100%;}
 .100pc{width:100%;}
 #divpub{background-color:#FFFFFF;}
