@@ -198,7 +198,7 @@ class FP_Service_DemandeFicheSoinsServices extends FP_Service_CommonServices {
             if ($login)// on ne fait pas attention aux accents, on récupère  les infos FA
                 {
                     $fs = FP_Service_FaServices::getInstance();
-                    $fa = $fs->getMapper()->select(null,'upper(login)=upper("'.str_replace('"','',$login).'") COLLATE utf8_general_ci','dateSubmit desc');
+                    $fa = $fs->getMapper()->select(null,'upper(login)=upper("'.str_replace('"','',$login).'") COLLATE utf8_general_ci AND idStatut IN (1,3)','dateSubmit desc');
                 }
             return $fa;    
         }
